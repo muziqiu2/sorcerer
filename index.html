@@ -14,9 +14,9 @@
   <link rel="preload" href="fonts/serif-900.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/serif-400.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/sixcaps-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="main.css?v=4">
+  <link rel="stylesheet" href="main.css?v=5">
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"WebSite","name":"魔法师","alternateName":"SORCERER.TOP","url":"https://sorcerer.top/","description":"让魔法师主导产品，来构建令人难忘的体验。"}
+    {"@context":"https://schema.org","@type":"Organization","name":"魔法师","alternateName":"SORCERER.TOP","url":"https://sorcerer.top/","description":"让魔法师主导产品，来构建令人难忘的体验。"}
   </script>
 </head>
 
@@ -39,8 +39,8 @@
           <span class="brand__name">魔法师</span>
         </a>
         <nav class="nav" aria-label="主导航">
+          <a href="#projects">项目</a>
           <a href="https://blog.20020831.xyz/" target="_blank" rel="noopener">博客</a>
-          <a href="https://github.com/muziqiu2/sorcerer" target="_blank" rel="noopener">源码</a>
         </nav>
       </div>
 
@@ -54,7 +54,7 @@
         <p class="lede">让魔法师主导产品，来构建令人难忘的体验。</p>
         <div class="actions">
           <a class="btn btn--solid" href="https://blog.20020831.xyz/" target="_blank" rel="noopener">阅读博客</a>
-          <a class="btn btn--ghost" href="https://github.com/muziqiu2/sorcerer" target="_blank" rel="noopener">查看源码</a>
+          <a class="btn btn--ghost" href="#projects">看看项目</a>
         </div>
       </div>
 
@@ -71,7 +71,7 @@
         <p class="dateline__text">
           <time id="today" datetime="2026-10-29">二〇二六年十月二十九日</time>
           <span id="weekday">星期四</span>
-          <span id="lunar">农历九月初九</span>
+          <span id="lunar">农历九月二十</span>
         </p>
       </div>
 
@@ -82,19 +82,19 @@
 
     <section class="statement shell" aria-labelledby="statement-head">
       <h2 class="statement__head" id="statement-head">先把问题看穿，<br>再决定它长什么样。</h2>
-      <p class="statement__note">做减法比做加法难，所以我先减。</p>
+      <p class="statement__note">做减法比做加法难，所以我们先减。</p>
     </section>
 
     <section class="about shell" aria-labelledby="about-head">
-      <h2 class="section-head" id="about-head">这个站点，一个人在做。</h2>
+      <h2 class="section-head" id="about-head">我们做产品，<br class="br-wide">也做每天要用的工具。</h2>
       <div class="about__body">
-        <p>这里放设计、代码，以及做完之后才想明白的事。更新不定时，也不追热点。</p>
-        <p>页面没有统计脚本，没有 Cookie。字是自己切的思源宋体子集，纸纹是一层 SVG 噪点。</p>
+        <p>魔法师是一个不大的团队。手上的事不多，但每件都想让它跑得久一点。</p>
+        <p>图床和随机图当初都是自己要用，做着做着就开放了出来。博客记着过程，也记着踩过的坑。</p>
       </div>
     </section>
 
-    <section class="places shell" aria-labelledby="places-head">
-      <h2 class="section-head" id="places-head">三个去处。</h2>
+    <section class="projects shell" id="projects" aria-labelledby="projects-head">
+      <h2 class="section-head" id="projects-head">三件在做的事。</h2>
       <ul class="rows">
         <li>
           <a class="row" href="https://blog.20020831.xyz/" target="_blank" rel="noopener">
@@ -104,17 +104,17 @@
           </a>
         </li>
         <li>
-          <a class="row" href="https://github.com/muziqiu2/sorcerer" target="_blank" rel="noopener">
-            <span class="row__name">源码</span>
-            <span class="row__note">这个站的全部代码，含字体子集与构建脚本。</span>
-            <span class="row__host">github.com/muziqiu2</span>
+          <a class="row" href="https://tc.mofashi.ltd/" target="_blank" rel="noopener">
+            <span class="row__name">魔法师图床</span>
+            <span class="row__note">永久免费，图片拖进去就能拿到外链。</span>
+            <span class="row__host">tc.mofashi.ltd</span>
           </a>
         </li>
         <li>
-          <a class="row" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
-            <span class="row__name">备案</span>
-            <span class="row__note">站点在工信部的备案号，可在此核验。</span>
-            <span class="row__host">beian.miit.gov.cn</span>
+          <a class="row" href="https://sjtp.api.mofashi.ltd/" target="_blank" rel="noopener">
+            <span class="row__name">魔法师随机图片</span>
+            <span class="row__note">二次元随机图接口，PC 与移动端各一套图库。</span>
+            <span class="row__host">sjtp.api.mofashi.ltd</span>
           </a>
         </li>
       </ul>
@@ -126,14 +126,13 @@
     <hr class="foot__rule">
     <div class="foot__grid">
       <p>© <span id="year">2026</span> 魔法师</p>
-      <p class="foot__colophon">字体 思源宋体、Six Caps</p>
       <a class="beian" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
         <img src="img/beian.png" alt="" width="16" height="16">鲁ICP备2022005744号-4
       </a>
     </div>
   </footer>
 
-  <script src="js/app.js?v=4" defer></script>
+  <script src="js/app.js?v=5" defer></script>
 </body>
 
 </html>

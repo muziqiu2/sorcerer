@@ -445,7 +445,7 @@ svg {
   border-left: var(--rule-hair) solid var(--color-rule);
 }
 
-.places {
+.projects {
   padding-bottom: var(--space-sect);
 }
 
@@ -676,6 +676,10 @@ svg {
 }
 
 @media (max-width: 40rem) {
+  .br-wide {
+    display: none;
+  }
+
   .hero__foot {
     flex-direction: column;
     align-items: stretch;
