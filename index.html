@@ -4,40 +4,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>魔法师</title>
+  <title>魔法师 · SORCERER.TOP</title>
   <meta name="description" content="魔法师 —— 让魔法师主导产品，来构建令人难忘的体验。">
-  <meta name="theme-color" content="#FFFFFF">
+  <meta name="theme-color" content="#14171c">
+  <script>document.documentElement.classList.add("js");</script>
   <link rel="icon" type="image/svg+xml" href="img/mark.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="img/logo.webp">
   <meta name="apple-mobile-web-app-title" content="魔法师">
-  <link rel="stylesheet" href="main.css?v=3">
+  <link rel="preload" href="fonts/serif-900.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/serif-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/sixcaps-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="main.css?v=4">
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","name":"魔法师","alternateName":"SORCERER.TOP","url":"https://sorcerer.top/","description":"让魔法师主导产品，来构建令人难忘的体验。"}
+  </script>
 </head>
 
 <body>
-  <div class="wrap">
+  <a class="skip" href="#main">跳到正文</a>
 
-    <header class="head">
-      <img class="mark" src="img/mark.svg" alt="" width="24" height="24">
-      <a class="blog" href="https://blog.20020831.xyz/" target="_blank" rel="noopener">博客</a>
-    </header>
+  <header class="hero grain">
+    <div class="shell hero__shell">
 
-    <main class="main">
-      <h1 class="name">魔法师</h1>
-      <p class="domain">SORCERER.TOP</p>
+      <div class="topline">
+        <a class="brand" href="/" aria-label="魔法师，回到首页">
+          <svg class="brand__mark" viewBox="0 0 120 120" width="26" height="26" aria-hidden="true" focusable="false">
+            <g fill="currentColor">
+              <path d="M52 9C50 27 40 50 24 70H96C82 46 66 24 52 9Z" />
+              <path d="M12 71H108C111.3 71 114 74.1 114 78S111.3 85 108 85H12C8.7 85 6 81.9 6 78S8.7 71 12 71Z" />
+              <path transform="translate(104 26)" d="M0-9C1-3.5 3.5-1 9 0C3.5 1 1 3.5 0 9C-1 3.5-3.5 1-9 0C-3.5-1-1-3.5 0-9Z" />
+              <path transform="translate(109 52) scale(.45)" d="M0-9C1-3.5 3.5-1 9 0C3.5 1 1 3.5 0 9C-1 3.5-3.5 1-9 0C-3.5-1-1-3.5 0-9Z" />
+            </g>
+          </svg>
+          <span class="brand__name">魔法师</span>
+        </a>
+        <nav class="nav" aria-label="主导航">
+          <a href="https://blog.20020831.xyz/" target="_blank" rel="noopener">博客</a>
+          <a href="https://github.com/muziqiu2/sorcerer" target="_blank" rel="noopener">源码</a>
+        </nav>
+      </div>
 
-      <p class="intro">让魔法师主导产品，来构建令人难忘的体验。</p>
+      <hr class="rule">
 
-      <p class="more">
-        <a href="https://blog.20020831.xyz/" target="_blank" rel="noopener">阅读博客文章&nbsp;→</a>
-      </p>
-    </main>
+      <p class="wordmark">SORCERER.TOP</p>
 
-    <footer class="foot">
-      <span>© 2026 魔法师</span>
-      <a class="beian" href="https://beian.miit.gov.cn/" rel="nofollow" target="_blank"><img src="https://vip-img.mofashi.ltd/2/2024/03/05/65e7168e4a93c.png" alt="">鲁ICP备2022005744号-4</a>
-    </footer>
+      <h1 class="masthead"><span class="masthead__fit">魔法师</span></h1>
 
-  </div>
+      <div class="hero__foot">
+        <p class="lede">让魔法师主导产品，来构建令人难忘的体验。</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="https://blog.20020831.xyz/" target="_blank" rel="noopener">阅读博客</a>
+          <a class="btn btn--ghost" href="https://github.com/muziqiu2/sorcerer" target="_blank" rel="noopener">查看源码</a>
+        </div>
+      </div>
+
+      <div class="dateline">
+        <span class="seal" aria-hidden="true">
+          <svg viewBox="0 0 120 120" width="26" height="26">
+            <g fill="currentColor">
+              <path d="M52 9C50 27 40 50 24 70H96C82 46 66 24 52 9Z" />
+              <path d="M12 71H108C111.3 71 114 74.1 114 78S111.3 85 108 85H12C8.7 85 6 81.9 6 78S8.7 71 12 71Z" />
+              <path transform="translate(104 26)" d="M0-9C1-3.5 3.5-1 9 0C3.5 1 1 3.5 0 9C-1 3.5-3.5 1-9 0C-3.5-1-1-3.5 0-9Z" />
+            </g>
+          </svg>
+        </span>
+        <p class="dateline__text">
+          <time id="today" datetime="2026-10-29">二〇二六年十月二十九日</time>
+          <span id="weekday">星期四</span>
+          <span id="lunar">农历九月初九</span>
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="statement shell" aria-labelledby="statement-head">
+      <h2 class="statement__head" id="statement-head">先把问题看穿，<br>再决定它长什么样。</h2>
+      <p class="statement__note">做减法比做加法难，所以我先减。</p>
+    </section>
+
+    <section class="about shell" aria-labelledby="about-head">
+      <h2 class="section-head" id="about-head">这个站点，一个人在做。</h2>
+      <div class="about__body">
+        <p>这里放设计、代码，以及做完之后才想明白的事。更新不定时，也不追热点。</p>
+        <p>页面没有统计脚本，没有 Cookie。字是自己切的思源宋体子集，纸纹是一层 SVG 噪点。</p>
+      </div>
+    </section>
+
+    <section class="places shell" aria-labelledby="places-head">
+      <h2 class="section-head" id="places-head">三个去处。</h2>
+      <ul class="rows">
+        <li>
+          <a class="row" href="https://blog.20020831.xyz/" target="_blank" rel="noopener">
+            <span class="row__name">博客</span>
+            <span class="row__note">开发记录与开源分享，更新不定时。</span>
+            <span class="row__host">blog.20020831.xyz</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/muziqiu2/sorcerer" target="_blank" rel="noopener">
+            <span class="row__name">源码</span>
+            <span class="row__note">这个站的全部代码，含字体子集与构建脚本。</span>
+            <span class="row__host">github.com/muziqiu2</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+            <span class="row__name">备案</span>
+            <span class="row__note">站点在工信部的备案号，可在此核验。</span>
+            <span class="row__host">beian.miit.gov.cn</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="foot shell">
+    <hr class="foot__rule">
+    <div class="foot__grid">
+      <p>© <span id="year">2026</span> 魔法师</p>
+      <p class="foot__colophon">字体 思源宋体、Six Caps</p>
+      <a class="beian" href="https://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+        <img src="img/beian.png" alt="" width="16" height="16">鲁ICP备2022005744号-4
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/app.js?v=4" defer></script>
 </body>
 
 </html>
