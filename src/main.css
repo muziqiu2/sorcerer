@@ -23,6 +23,13 @@
   --color-accent-ink: oklch(96% 0.012 80);
   --color-focus: oklch(54% 0.185 31);
 
+  /* 打印：白纸黑字 */
+  --color-print-paper: oklch(100% 0.005 250);
+  --color-print-ink: oklch(14% 0.008 250);
+  --color-print-muted: oklch(31% 0.008 250);
+  --color-print-line: oklch(64% 0.008 250);
+  --color-print-accent: oklch(51% 0.14 29);
+
   /* 字 */
   --font-serif: "Sorcerer Serif", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", SimSun, serif;
   --font-mark: "Six Caps", "Arial Narrow", "Helvetica Neue", sans-serif;
@@ -132,6 +139,7 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img,
@@ -187,6 +195,7 @@ svg {
   isolation: isolate;
   display: flex;
   flex-direction: column;
+  /* 仅 svh；不支持的老浏览器退化为内容高度，可接受 */
   min-height: 100svh;
   background: var(--color-ink-band);
   color: var(--color-on-ink);
@@ -224,6 +233,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
+  min-height: 44px;
   padding-block: var(--space-3xs);
 }
 
@@ -245,17 +255,34 @@ svg {
 }
 
 .nav a {
-  padding-block: 0.55rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: var(--color-on-ink-muted);
-  border-bottom: var(--rule-hair) solid transparent;
-  transition: color var(--dur-short) var(--ease-out),
-    border-color var(--dur-short) var(--ease-out);
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+/* 下划线贴着文字，不随点击区变大 */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 12px;
+  height: var(--rule-hair);
+  background: transparent;
+  transition: background-color var(--dur-short) var(--ease-out);
 }
 
 .nav a:hover,
 .nav a:active {
   color: var(--color-on-ink);
-  border-color: var(--color-accent);
+}
+
+.nav a:hover::after,
+.nav a:active::after {
+  background: var(--color-accent);
 }
 
 .rule {
@@ -270,7 +297,9 @@ svg {
 .wordmark {
   margin-top: var(--space-sm);
   font-family: var(--font-mark);
-  font-size: clamp(1.0625rem, 2.1cqi, 1.5rem);
+  /* 旧浏览器先吃 vw 回退，再吃容器查询单位 */
+  font-size: clamp(1.25rem, 2.3vw, 1.75rem);
+  font-size: clamp(1.25rem, 2.2cqi, 1.75rem);
   font-weight: 400;
   line-height: 1;
   letter-spacing: var(--tracking-mark);
@@ -289,6 +318,7 @@ svg {
 
 .masthead__fit {
   display: block;
+  font-size: 30.1vw;
   font-size: 33cqi;
   white-space: nowrap;
 }
@@ -305,7 +335,8 @@ svg {
 
 .lede {
   max-width: 22em;
-  font-size: clamp(1.0625rem, 2.2cqi, 1.375rem);
+  font-size: clamp(1.0625rem, 2.2vw, 1.5rem);
+  font-size: clamp(1.0625rem, 2.4cqi, 1.5rem);
   line-height: 1.7;
   color: var(--color-on-ink);
 }
@@ -321,6 +352,7 @@ svg {
   align-items: center;
   justify-content: center;
   min-height: 48px;
+  padding-inline: var(--space-md);
   padding-inline: clamp(1.25rem, 2.4cqi, 1.75rem);
   border: var(--rule-hair) solid currentColor;
   font-size: 1rem;
@@ -394,6 +426,7 @@ svg {
 
 .statement__head {
   max-width: 20ch;
+  font-size: clamp(2.15rem, 5vw, 4.4rem);
   font-size: clamp(2.15rem, 5.4cqi, 4.4rem);
   font-weight: 900;
   line-height: 1.18;
@@ -413,6 +446,7 @@ svg {
 .section-head {
   padding-top: var(--space-sm);
   border-top: var(--rule-bar) solid var(--color-ink);
+  font-size: clamp(2.25rem, 3.3vw, 3rem);
   font-size: clamp(2.25rem, 3.6cqi, 3rem);
   font-weight: 900;
   line-height: 1.2;
@@ -473,6 +507,7 @@ svg {
 }
 
 .row__name {
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
   font-size: clamp(1.25rem, 2.2cqi, 1.625rem);
   font-weight: 900;
   line-height: 1.3;
@@ -539,6 +574,7 @@ svg {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+  min-height: 44px;
   color: var(--color-muted);
   transition: color var(--dur-short) var(--ease-out);
 }
@@ -686,10 +722,6 @@ svg {
     margin-top: var(--space-flow);
   }
 
-  .dateline {
-    margin-top: auto;
-  }
-
   .actions {
     width: 100%;
   }
@@ -699,6 +731,7 @@ svg {
   }
 
   .masthead__fit {
+    font-size: 29.7vw;
     font-size: 32.6cqi;
   }
 
@@ -724,5 +757,75 @@ svg {
   .js .statement__head.is-idle {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* ============================================================
+   打印：白纸黑字，别把墨底打成整页黑块
+   ============================================================ */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html,
+  body {
+    background: var(--color-print-paper);
+    color: var(--color-print-ink);
+  }
+
+  .hero {
+    min-height: auto;
+    background: var(--color-print-paper);
+    color: var(--color-print-ink);
+  }
+
+  .grain::after,
+  .nav,
+  .actions,
+  .skip {
+    display: none;
+  }
+
+  .brand__mark,
+  .lede,
+  .masthead {
+    color: var(--color-print-ink);
+  }
+
+  .wordmark,
+  .dateline__text {
+    color: var(--color-print-muted);
+  }
+
+  .rule,
+  .seal {
+    background: var(--color-print-accent);
+  }
+
+  .seal {
+    color: var(--color-print-paper);
+  }
+
+  .js .statement__head.is-idle {
+    opacity: 1;
+    transform: none;
+  }
+
+  .statement__head {
+    clip-path: none;
+  }
+
+  .rows li,
+  .row {
+    break-inside: avoid;
+  }
+
+  .foot__rule {
+    border-color: var(--color-print-line);
   }
 }
